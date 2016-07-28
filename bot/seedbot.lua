@@ -213,7 +213,7 @@ function create_config( )
     "ingroup",
     "inpm",
     "banhammer",
-    "stats",
+    "plugins",
     "anti_spam",
     "owners",
     "arabic_lock",
@@ -224,15 +224,16 @@ function create_config( )
     "invite",
     "all",
     "leave_ban",
-    "admin"
+    "admin",
+    "rmsg"
     },
-    sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {235162148,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[Teleseed v2 - Open Source
 An advance Administration bot based on yagop/telegram-bot 
 
-https://github.com/SEEDTEAM/TeleSeed
+https://github.com/Developeriran/zotrixtg
 
 Our team!
 Alphonse (@Iwals)
@@ -248,8 +249,8 @@ Topkecleon
 Vamptacus
 
 Our channels:
-English: @TeleSeedCH
-Persian: @IranSeed
+English: @pplugins
+Persian: @pplugins
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -324,108 +325,101 @@ This command will send text to [group_id]
 
 ]],
     help_text = [[
-Commands list :
+!info
+🌟نشان دادن مشخصات شما
 
-!kick [username|id]
-You can also do it by reply
-
-!ban [ username|id]
-You can also do it by reply
-
-!unban [id]
-You can also do it by reply
-
-!who
-Members list
-
-!modlist
-Moderators list
-
-!promote [username]
-Promote someone
-
-!demote [username]
-Demote someone
-
-!kickme
-Will kick user
-
-!about
-Group description
-
-!setphoto
-Set and locks group photo
-
-!setname [name]
-Set group name
-
-!rules
-Group rules
-
-!id
-Return group id or user id
-
-!help
-Get commands list
-
-!lock [member|name|bots|leave] 
-Locks [member|name|bots|leaveing] 
-
-!unlock [member|name|bots|leave]
-Unlocks [member|name|bots|leaving]
-
-!set rules [text]
-Set [text] as rules
-
-!set about [text]
-Set [text] as about
-
-!settings
-Returns group settings
-
-!newlink
-Create/revoke your group link
-
-!link
-Returns group link
-
+*درصورت ریپلای مشخصات فرد را نشان میدهد
 !owner
-Returns group owner id
+🌟نشان دادن صاحب گروه
+➖➖🌟➖➖
+!modlist
+🌟نشان دادن مدهای گروه
+➖➖🌟➖➖
+!block
+🌟حذف یک کاربر ازسوپر گروه
+➖➖🌟➖➖
 
-!setowner [id]
-Will set id as owner
+*افزودن به کاربر به لیست مسدود شده ها*
+!ban
+🌟بن کردن فرد از گروه
+➖➖🌟➖➖
+!unban
+🌟انبن کردن فرد از گروه
+➖➖🌟➖➖
+!kickme
+🌟کیک کردن خودتا از سوپر گروه
+*باید توسط صاحب گروه انبلاک شوید یا با پیام جوین برگردید*
+➖➖🌟➖➖
+!setowner
+🌟تنظیم صاحب گروه
+➖➖🌟➖➖
+!promote [username|id]
+🌟ارتقا یک فرد به مد
+➖➖🌟➖➖
+!demote [username|id]
 
-!setflood [value]
-Set [value] as flood sensitivity
+🌟تنزل یک فرد به یوزر
+➖➖🌟➖➖
 
-!stats
-Simple message statistics
-
-!save [value] [text]
-Save [text] as [value]
-
+!setname
+🌟تنظیم نام گروه
+➖➖🌟➖➖
+!setphoto
+🌟تنظیم عکس گروه
+➖➖🌟➖➖
+!setrules
+🌟تنظیم قوانین گروه
+➖➖🌟➖➖
+!setabout
+🌟تنظیم درباره گروه(در لیست اعضا)
+➖➖🌟➖➖
+!save [value] <text>
+🌟تنظیم متن برای مقداری خاص
+➖➖🌟➖➖
 !get [value]
-Returns text of [value]
-
-!clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
-
-!res [username]
-Returns user id
-
-!log
-Will return group logs
-
+🌟دریافت متن از ارسال مقدار
+➖➖🌟➖➖
+!link
+🌟دریافت لینک گروه
+➖➖🌟➖➖
+!rules
+🌟دریافت قوانین
+➖➖🌟➖➖
+!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|video|share|photo|join|gif|fwd|english|antiemoji|chat|audio|adstag|antifosh|strict]
+➖➖🌟➖➖
+🌟قفل تنظیمات گروه
+!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|video|share|photo|join|gif|fwd|english|antiemoji|chat|audio|adstag|antifosh|strict]
+➖➖🌟➖➖
+🌟بازکردن تنظیمات گروه
+!mute [all|audio|gifs|photo|video|service
+🌟قفل مواد ارسالی کاربران
+*یک مواد موت شده باعث میشود آن مواد تنها حذف شود
+➖➖🌟➖➖
+!unmute [all|audio|gifs|photo|video|service]
+🌟بازکردن مواد ارسالی کاربران
+➖➖🌟➖➖
+!setflood [value]
+🌟تنظیم مقدار حساسیت اسپم
+➖➖🌟➖➖
+!settings
+🌟دریافت تنظیمات گروه
+➖➖🌟➖➖
+!muteslist
+🌟دریافت مواد قفل شده در گروه
+➖➖🌟➖➖
+!muteuser [username]
+🌟خفه کردن یک فرد در گروه
+➖➖🌟➖➖
+!mutelist
+🌟دریافت لیست کاربران خفه شده
+➖➖🌟➖➖
 !banlist
-Will return group ban list
+🌟دریافت لیست بن شده گروه
+➖➖🌟➖➖
+clean [rules|about|modlist|mutelist]
+**تمامی دستورات نیاز به "/"و"#"و"!" میباشد
+*صاحبان گروه تنها میتوانند دستورات اصلی را اجرا کنند.]]
 
-» U can use both "/" and "!" 
-
-» Only mods, owner and admin can add bots in group
-
-» Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-» Only owner can use res,setowner,promote,demote and log commands
 
 ]]
   }
